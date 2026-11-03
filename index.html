@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mohamed &amp; Merna</title>
+<meta name="description" content="Mohamed & Merna — November 28, 2026">
+<meta property="og:title" content="Mohamed & Merna — Wedding Invitation">
+<meta property="og:description" content="November 28, 2026">
+<meta property="og:image" content="img/couple.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Noto+Naskh+Arabic:wght@400;700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#464f1e; --gold:#ba9a61; --cream:#fefaef; --cream2:#fdf9f0;
+  --serif:'Noto Serif',Georgia,serif; --script:'Great Vibes','Brush Script MT',cursive;
+  --ar:'Noto Naskh Arabic','Amiri',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{background:#efe8d6}
+body{font-family:var(--serif);color:var(--green);-webkit-font-smoothing:antialiased}
+body.locked{overflow:hidden;height:100vh}
+img{display:block;max-width:100%}
+
+/* ---------- page shell ---------- */
+.page{max-width:480px;margin:0 auto;background:var(--cream);container-type:inline-size;--u:calc(100cqw / 1080);
+  position:relative;overflow:hidden;box-shadow:0 0 60px rgba(70,80,30,.18)}
+.abs{position:absolute;left:0;width:100%;text-align:center;transform:translateY(-50%)}
+.imgsec{position:relative}
+.imgsec>img{width:100%;height:auto}
+
+/* ---------- cover ---------- */
+.cover{position:fixed;inset:0;z-index:100;background:#efe8d6;display:grid;place-items:center;
+  transition:opacity .9s ease,visibility .9s}
+.cover.hide{opacity:0;visibility:hidden}
+.coverbg{position:absolute;top:0;bottom:0;left:50%;width:min(100vw,480px);transform:translateX(-50%);background:url(img/tile.jpg) center top/100% auto repeat-y}
+.stage{position:relative;width:min(100vw,480px,calc(100dvh * .66));container-type:inline-size;--u:calc(100cqw / 1080)}
+.card{position:relative;width:calc(var(--u)*928);height:calc(var(--u)*1326);margin:0 auto;background:var(--cream);
+  border-radius:calc(var(--u)*30);box-shadow:0 calc(var(--u)*24) calc(var(--u)*60) rgba(40,50,10,.28),0 0 0 1px rgba(186,154,97,.25);
+  overflow:hidden;text-align:center;animation:rise 1s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(calc(var(--u)*40)) scale(.96)}to{opacity:1;transform:none}}
+.orn{position:absolute;pointer-events:none}
+.orn.tl{left:calc(var(--u)*4);top:calc(var(--u)*4);width:calc(var(--u)*212)}
+.orn.br{right:0;bottom:calc(var(--u)*1);width:calc(var(--u)*214)}
+.heart{position:absolute;left:50%;top:calc(var(--u)*60);width:calc(var(--u)*178);height:calc(var(--u)*178);margin-left:calc(var(--u)*-89);
+  border-radius:50%;background:radial-gradient(circle at 50% 35%,#4c5a22,#2f3a10);display:grid;place-items:center;
+  box-shadow:0 0 calc(var(--u)*70) calc(var(--u)*30) rgba(70,80,30,.10),0 calc(var(--u)*14) calc(var(--u)*30) rgba(40,50,10,.35)}
+.heart svg{width:52%;fill:#dcd8d8;animation:beat 2.2s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.c-name{position:absolute;left:0;width:100%;font-family:var(--script);font-size:calc(var(--u)*128);line-height:1;color:var(--green);transform:translateY(-50%)}
+.c-amp{position:absolute;left:0;width:100%;font-family:var(--script);font-size:calc(var(--u)*80);line-height:1;color:var(--green);transform:translateY(-50%)}
+.divider{position:absolute;left:0;width:100%;top:calc(var(--u)*667);display:flex;align-items:center;justify-content:center;gap:calc(var(--u)*100);transform:translateY(-50%)}
+.divider i{display:block;width:calc(var(--u)*116);height:calc(var(--u)*2);background:linear-gradient(90deg,transparent,var(--gold) 40%,var(--gold))}
+.divider i:last-child{background:linear-gradient(270deg,transparent,var(--gold) 40%,var(--gold))}
+.divider svg{position:absolute;width:calc(var(--u)*34);fill:var(--gold)}
+.c-txt{position:absolute;left:0;width:100%;font-size:calc(var(--u)*58);color:var(--gold);transform:translateY(-50%);letter-spacing:.01em}
+.open-btn{position:absolute;left:50%;top:calc(var(--u)*1016);width:calc(var(--u)*330);height:calc(var(--u)*143);margin-left:calc(var(--u)*-165);
+  border:0;border-radius:999px;cursor:pointer;color:#fff;font-family:var(--serif);font-size:calc(var(--u)*56);letter-spacing:.02em;
+  background:linear-gradient(110deg,var(--green) 0%,var(--green) 34%,rgba(150,160,110,.95) 46%,var(--green) 58%,var(--green) 100%);background-size:260% 100%;
+  animation:sheen 3.2s ease-in-out infinite;box-shadow:0 calc(var(--u)*16) calc(var(--u)*32) rgba(70,80,30,.38)}
+.open-btn:active{transform:scale(.97)}
+@keyframes sheen{0%{background-position:100% 0}60%,100%{background-position:0 0}}
+
+/* ---------- hero text ---------- */
+.save{font-size:calc(var(--u)*52);letter-spacing:.17em;color:var(--gold);font-weight:600;padding-left:.17em}
+.big{font-size:calc(var(--u)*108);font-style:italic;font-weight:500;color:var(--green);letter-spacing:.01em}
+.amp-g{font-family:var(--script);font-size:calc(var(--u)*165);line-height:1;color:var(--gold)}
+.ar-h{font-family:var(--ar);font-weight:700;font-size:calc(var(--u)*60);color:var(--green);direction:rtl}
+.ar-v{font-family:'Amiri',var(--ar);font-size:calc(var(--u)*53);line-height:1.42;color:var(--green);direction:rtl;padding:0 calc(var(--u)*100)}
+.script{font-family:var(--script);font-size:calc(var(--u)*150);line-height:1;color:var(--green)}
+.script.amp{font-size:calc(var(--u)*120)}
+
+/* ---------- gallery ---------- */
+.gallery{position:relative;background:var(--cream2);height:calc(var(--u)*1423);overflow:hidden;border-top:0}
+.sec-title{font-weight:700;font-size:calc(var(--u)*76);letter-spacing:.005em;color:var(--green);text-transform:uppercase}
+.flow{position:absolute;left:calc(var(--u)*185);top:calc(var(--u)*309);width:calc(var(--u)*585);height:calc(var(--u)*896);perspective:calc(var(--u)*2200)}
+.slide{position:absolute;inset:0;border-radius:calc(var(--u)*56);overflow:hidden;background:#fff;transition:transform .8s cubic-bezier(.3,.7,.2,1),opacity .8s,box-shadow .8s;
+  box-shadow:0 calc(var(--u)*34) calc(var(--u)*50) rgba(70,80,30,.20);will-change:transform}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slide.kids img{object-position:50% 40%}
+.dots{position:absolute;left:0;width:100%;top:calc(var(--u)*1315);display:flex;gap:calc(var(--u)*30);justify-content:center;align-items:center;transform:translateY(-50%)}
+.dots b{display:block;width:calc(var(--u)*26);height:calc(var(--u)*26);border-radius:99px;background:#ece1cb;transition:all .5s;cursor:pointer}
+.dots b.on{width:calc(var(--u)*72);background:#cfb88e}
+
+/* ---------- reception ---------- */
+.rtxt{position:absolute;color:var(--green)}
+.r-h{font-weight:700;font-size:calc(var(--u)*58);line-height:1.25;text-transform:uppercase;padding:0 calc(var(--u)*130)}
+.r-gold{font-weight:700;font-size:calc(var(--u)*44);color:var(--gold);text-transform:uppercase;white-space:nowrap}
+.r-28{font-size:calc(var(--u)*200);font-weight:300;line-height:1;color:var(--green)}
+.r-bar{position:absolute;left:calc(var(--u)*491);top:calc(var(--u)*460);width:calc(var(--u)*3);height:calc(var(--u)*137);background:var(--green)}
+.r-mon{font-size:calc(var(--u)*48);font-weight:400;text-transform:uppercase;letter-spacing:.01em;white-space:nowrap}
+.r-cd{font-weight:400;font-size:calc(var(--u)*58);color:var(--gold);text-transform:uppercase}
+.r-cdv{font-weight:700;font-size:calc(var(--u)*54);color:var(--gold);line-height:1.38;padding:0 calc(var(--u)*100)}
+.cal{position:absolute;left:calc(var(--u)*157);top:calc(var(--u)*1017);width:calc(var(--u)*766);height:calc(var(--u)*915);background:var(--green);
+  border-radius:calc(var(--u)*56);color:#fff;overflow:visible}
+.cal .t{position:absolute;left:0;width:100%;top:calc(var(--u)*92);text-align:center;font-family:var(--script);font-size:calc(var(--u)*72);transform:translateY(-50%);white-space:nowrap}
+.cal .l1{position:absolute;left:calc(var(--u)*35);right:calc(var(--u)*35);top:calc(var(--u)*171);height:calc(var(--u)*3);background:rgba(255,255,255,.28)}
+.cal .l2{position:absolute;left:calc(var(--u)*35);right:calc(var(--u)*35);top:calc(var(--u)*256);height:calc(var(--u)*7);background:#fff;border-radius:9px}
+.cal .wd{position:absolute;left:calc(var(--u)*35);right:calc(var(--u)*35);top:calc(var(--u)*184);height:calc(var(--u)*60);display:grid;grid-template-columns:repeat(7,1fr);text-align:center;
+  align-items:center;font-size:calc(var(--u)*36);color:rgba(255,255,255,.72)}
+.cal .days{position:absolute;left:calc(var(--u)*35);right:calc(var(--u)*35);top:calc(var(--u)*282);display:grid;grid-template-columns:repeat(7,1fr);grid-auto-rows:calc(var(--u)*96);
+  text-align:center;align-items:center;font-size:calc(var(--u)*43)}
+.cal .days span{position:relative;z-index:1}
+.cal .days span.hl{color:var(--green);font-weight:700}
+.cal .days span.hl svg{position:absolute;left:50%;top:50%;width:calc(var(--u)*86);transform:translate(-50%,-54%);fill:#fff;z-index:-1}
+.addcal{font-size:calc(var(--u)*50);color:var(--green);text-decoration:underline;text-decoration-thickness:calc(var(--u)*4);text-underline-offset:calc(var(--u)*10);cursor:pointer;background:none;border:0;font-family:var(--serif)}
+
+/* ---------- venue ---------- */
+.venue{position:relative;background:var(--cream2);height:calc(var(--u)*1383)}
+.v-title{font-family:var(--ar);font-weight:700;font-size:calc(var(--u)*68);color:var(--green);direction:rtl}
+.v-sub{font-family:var(--ar);font-size:calc(var(--u)*40);color:#b69b6c;direction:rtl;padding:0 calc(var(--u)*60);line-height:1.4}
+.map{position:absolute;left:calc(var(--u)*72);top:calc(var(--u)*315);width:calc(var(--u)*936);height:calc(var(--u)*803);border-radius:calc(var(--u)*44);overflow:hidden;
+  box-shadow:0 calc(var(--u)*10) calc(var(--u)*30) rgba(70,80,30,.12);background:#e8e4d6}
+.map iframe{width:100%;height:100%;border:0}
+.dir{position:absolute;left:0;width:100%;top:calc(var(--u)*1218);display:flex;justify-content:center;transform:translateY(-50%)}
+.dir a{display:inline-flex;align-items:center;gap:calc(var(--u)*26);text-decoration:none;color:var(--gold);font-family:'Roboto',sans-serif;font-weight:500;font-size:calc(var(--u)*52)}
+.dir svg{width:calc(var(--u)*56);height:calc(var(--u)*56);stroke:var(--gold);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- guestbook ---------- */
+.guest{background:var(--cream2);padding:calc(var(--u)*118) calc(var(--u)*168) calc(var(--u)*120);text-align:center}
+.guest .sec-title{margin-bottom:calc(var(--u)*80)}
+.field{width:100%;border:calc(var(--u)*4) solid #b99b69;border-radius:calc(var(--u)*50);background:transparent;padding:calc(var(--u)*38) calc(var(--u)*50);
+  font-family:'Roboto',sans-serif;font-weight:300;font-size:calc(var(--u)*50);color:var(--green);outline:none;display:block}
+.field::placeholder{color:#d9c9ad}
+.field:focus{border-color:var(--green)}
+textarea.field{height:calc(var(--u)*316);resize:none;margin-top:calc(var(--u)*49);padding-top:calc(var(--u)*44)}
+.row{display:flex;justify-content:space-between;align-items:center;margin-top:calc(var(--u)*72)}
+.wand{width:calc(var(--u)*107);height:calc(var(--u)*95);border:0;border-radius:calc(var(--u)*30);background:#f6f0e2;font-size:calc(var(--u)*56);cursor:pointer}
+.send{width:calc(var(--u)*445);height:calc(var(--u)*108);border:0;border-radius:999px;background:#ba9a60;color:#fff;font-family:var(--serif);font-weight:700;
+  font-size:calc(var(--u)*54);letter-spacing:.03em;cursor:pointer}
+.send:disabled{opacity:.7}
+.send:active,.wand:active{transform:scale(.97)}
+.empty{margin-top:calc(var(--u)*130);font-size:calc(var(--u)*56);color:#cdb78e}
+.wishes{margin-top:calc(var(--u)*100);display:grid;gap:calc(var(--u)*34);text-align:center}
+.wish{border:calc(var(--u)*3) solid #e4d6b8;border-radius:calc(var(--u)*40);padding:calc(var(--u)*40) calc(var(--u)*44);background:#fffdf6}
+.wish b{display:block;font-size:calc(var(--u)*46);color:var(--green);margin-bottom:calc(var(--u)*10)}
+.wish p{font-size:calc(var(--u)*44);color:#9b8250;line-height:1.5;white-space:pre-wrap;word-break:break-word}
+.presence{margin:calc(var(--u)*100) calc(var(--u)*-100) 0;font-family:'Roboto',sans-serif;font-weight:300;font-size:calc(var(--u)*41);color:#b49b70;text-wrap:balance}
+.foot{margin-top:calc(var(--u)*100);font-family:'Roboto',sans-serif;font-weight:300;font-size:calc(var(--u)*46);color:#d9caaf}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(calc(var(--u)*40));transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body class="locked">
+
+<!-- ================= COVER ================= -->
+<div class="cover" id="cover">
+  <div class="coverbg"></div>
+  <div class="stage">
+    <div class="card">
+      <img class="orn tl" src="img/orn_tl.png" alt="">
+      <img class="orn br" src="img/orn_br.png" alt="">
+      <div class="heart"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+      <div class="c-name" style="top:calc(var(--u)*379)">Mohamed</div>
+      <div class="c-amp" style="top:calc(var(--u)*472)">&amp;</div>
+      <div class="c-name" style="top:calc(var(--u)*549)">Merna</div>
+      <div class="divider"><i></i><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg><i></i></div>
+      <div class="c-txt" style="top:calc(var(--u)*762)">November 28, 2026</div>
+      <div class="c-txt" style="top:calc(var(--u)*904)">Cordially Invites</div>
+      <button class="open-btn" id="openBtn">Open</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PAGE ================= -->
+<main class="page" id="page">
+
+  <!-- Save the date + Arabic card (one stitched floral image) -->
+  <section class="imgsec" style="aspect-ratio:1080/3385">
+    <img src="img/hero.jpg" alt="" width="1080" height="3385">
+    <div class="abs save rv" style="top:calc(var(--u)*541)">SAVE THE DATE</div>
+    <div class="abs big rv" style="top:calc(var(--u)*687)">MOHAMED</div>
+    <div class="abs amp-g rv" style="top:calc(var(--u)*880)">&amp;</div>
+    <div class="abs big rv" style="top:calc(var(--u)*1073)">MERNA</div>
+
+    <div class="abs ar-h rv" style="top:calc(var(--u)*2077)">نتشرف بدعوتكم لعقد القران</div>
+    <div class="abs ar-v rv" style="top:calc(var(--u)*2302)">{وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ}</div>
+    <div class="abs script rv" style="top:calc(var(--u)*2592)">Mohamed</div>
+    <div class="abs script amp rv" style="top:calc(var(--u)*2845)">&amp;</div>
+    <div class="abs script rv" style="top:calc(var(--u)*3042)">Merna</div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <div class="abs sec-title" style="top:calc(var(--u)*140)">Photo Gallery</div>
+    <div class="flow" id="flow">
+      <div class="slide"><img src="img/couple.jpg" alt="Mohamed &amp; Merna"></div>
+      <div class="slide kids"><img src="img/kids.jpg" alt=""></div>
+    </div>
+    <div class="dots" id="dots"><b class="on"></b><b></b></div>
+  </section>
+
+  <!-- Reception -->
+  <section class="imgsec" style="aspect-ratio:1080/2229">
+    <img src="img/reception.jpg" alt="" width="1080" height="2229">
+    <div class="abs rtxt r-h" style="top:calc(var(--u)*253)">The reception will take place at:</div>
+    <div class="rtxt r-gold" style="left:calc(var(--u)*386);top:calc(var(--u)*387);transform:translate(-50%,-50%)">3:00 PM</div>
+    <div class="rtxt r-gold" style="left:calc(var(--u)*657);top:calc(var(--u)*387);transform:translate(-50%,-50%)">Saturday</div>
+    <div class="rtxt r-28" style="left:calc(var(--u)*375);top:calc(var(--u)*528);transform:translate(-50%,-50%)">28</div>
+    <div class="r-bar"></div>
+    <div class="rtxt r-mon" style="left:calc(var(--u)*521);top:calc(var(--u)*485);transform:translateY(-50%)">November</div>
+    <div class="rtxt r-mon" style="left:calc(var(--u)*521);top:calc(var(--u)*569);transform:translateY(-50%)">2026</div>
+    <div class="abs rtxt r-cd" style="top:calc(var(--u)*722)">Countdown</div>
+    <div class="abs rtxt r-cdv" style="top:calc(var(--u)*867)" id="cd">&nbsp;</div>
+    <div class="cal" id="cal">
+      <div class="t">November 2026</div><div class="l1"></div>
+      <div class="wd"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div>
+      <div class="l2"></div>
+      <div class="days" id="days"></div>
+    </div>
+    <div class="abs rtxt" style="top:calc(var(--u)*2027)"><button class="addcal" id="addcal">Add to Calendar</button></div>
+  </section>
+
+  <!-- Venue -->
+  <section class="venue">
+    <div class="abs v-title" style="top:calc(var(--u)*146)">قاعة لوريال</div>
+    <div class="abs v-sub" style="top:calc(var(--u)*248)">نادي الجلاء بجوار صن مول الدخول من بوابة رقم (10)</div>
+    <div class="map"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+      src="https://www.google.com/maps?q=%D9%86%D8%A7%D8%AF%D9%8A+%D8%A7%D9%84%D8%AC%D9%84%D8%A7%D8%A1+%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9&amp;hl=ar&amp;z=15&amp;output=embed"></iframe></div>
+    <div class="dir"><a target="_blank" rel="noopener" href="https://maps.app.goo.gl/y1BE4hnK1AvtCRt38">
+      <svg viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>Get directions</a></div>
+  </section>
+
+  <img src="img/strip.jpg" alt="" style="width:100%;height:auto">
+
+  <!-- Guestbook -->
+  <section class="guest">
+    <h2 class="sec-title">Guestbook</h2>
+    <input class="field" id="gName" type="text" maxlength="60" placeholder="Enter your name*" autocomplete="name">
+    <textarea class="field" id="gMsg" maxlength="500" placeholder="Enter your wishes*"></textarea>
+    <div class="row">
+      <button class="wand" id="wand" title="Suggest a wish" aria-label="Suggest a wish">🪄</button>
+      <button class="send" id="send">SEND WISHES</button>
+    </div>
+    <div class="empty" id="empty">No wishes yet. Be the first!</div>
+    <div class="wishes" id="wishes"></div>
+    <p class="presence">Your presence would be the greatest gift we could receive!</p>
+    <p class="foot">♡ Mohamed &amp; Merna</p>
+  </section>
+
+  <img src="img/strip.jpg" alt="" style="width:100%;height:auto">
+</main>
+
+<script>
+(function(){
+  /* ---------- open cover ---------- */
+  var cover=document.getElementById('cover');
+  document.getElementById('openBtn').addEventListener('click',function(){
+    cover.classList.add('hide'); document.body.classList.remove('locked'); window.scrollTo(0,0);
+    setTimeout(function(){cover.style.display='none'},1000);
+  });
+
+  /* ---------- reveal on scroll ---------- */
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+  /* ---------- gallery coverflow ---------- */
+  var slides=[].slice.call(document.querySelectorAll('#flow .slide')),dots=[].slice.call(document.querySelectorAll('#dots b')),cur=0,timer;
+  function layout(){
+    var n=slides.length;
+    slides.forEach(function(s,i){
+      var d=(i-cur+n)%n; if(d>n/2)d-=n;
+      var u='calc(var(--u)*';
+      if(d===0){s.style.transform='none';s.style.zIndex=3;s.style.opacity=1}
+      else if(d>0){s.style.transform='translateX('+u+'470)) rotateY(-26deg) scale(.9)';s.style.zIndex=2;s.style.opacity=1}
+      else{s.style.transform='translateX('+u+'-470)) rotateY(26deg) scale(.9)';s.style.zIndex=2;s.style.opacity=1}
+    });
+    dots.forEach(function(d,i){d.classList.toggle('on',i===cur)});
+  }
+  function go(i){cur=(i+slides.length)%slides.length;layout();restart()}
+  function restart(){clearInterval(timer);timer=setInterval(function(){go(cur+1)},4200)}
+  dots.forEach(function(d,i){d.addEventListener('click',function(){go(i)})});
+  var fl=document.getElementById('flow'),sx=null;
+  fl.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  fl.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>30)go(cur+(dx<0?1:-1));sx=null});
+  fl.addEventListener('click',function(){go(cur+1)});
+  layout();restart();
+
+  /* ---------- countdown (Sat 28 Nov 2026, 3:00 PM Cairo = UTC+2) ---------- */
+  var target=Date.parse('2026-11-28T15:00:00+02:00'),cd=document.getElementById('cd');
+  function tick(){
+    var t=target-Date.now();
+    if(t<=0){cd.textContent='🎉 Today is the day!';return}
+    var d=Math.floor(t/864e5),h=Math.floor(t%864e5/36e5),m=Math.floor(t%36e5/6e4),s=Math.floor(t%6e4/1e3);
+    cd.textContent=d+' days '+h+' hours '+m+' min '+s+' sec';
+  }
+  tick();setInterval(tick,1000);
+
+  /* ---------- calendar grid: November 2026 (Nov 1 = Sunday) ---------- */
+  var heart='<svg viewBox="0 0 24 24"><path d="M12 22.5C5 16.6 2 12.7 2 8.7 2 5.6 4.2 3.5 7 3.5c2 0 3.9 1.1 5 3 1.1-1.9 3-3 5-3 2.8 0 5 2.1 5 5.2 0 4-3 7.9-10 13.8z"/></svg>';
+  var days=document.getElementById('days'),html='';
+  for(var i=0;i<6;i++)html+='<span></span>';
+  for(var d=1;d<=30;d++)html+=d===28?'<span class="hl">'+heart+'28</span>':'<span>'+d+'</span>';
+  days.innerHTML=html;
+
+  /* ---------- add to calendar (.ics) ---------- */
+  document.getElementById('addcal').addEventListener('click',function(){
+    var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Mohamed & Merna//Wedding//EN','BEGIN:VEVENT',
+      'UID:mohamed-merna-20261128@wedding','DTSTAMP:20261103T000000Z','DTSTART:20261128T130000Z','DTEND:20261128T170000Z',
+      'SUMMARY:Mohamed & Merna - Wedding','LOCATION:Lorraine Hall - Al Galaa Club (Gate 10)',
+      'DESCRIPTION:Your presence would be the greatest gift we could receive!','END:VEVENT','END:VCALENDAR'].join('\r\n');
+    var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([ics],{type:'text/calendar'}));a.download='mohamed-merna-wedding.ics';
+    document.body.appendChild(a);a.click();a.remove();
+  });
+
+  /* ---------- guestbook ---------- */
+  // Paste your Google Apps Script web-app URL between the quotes to share wishes with everyone and collect them in your Google Sheet.
+  var API='';
+  var KEY='mm_wishes_v1',list=document.getElementById('wishes'),empty=document.getElementById('empty'),sendBtn=document.getElementById('send');
+  var wishes=[];
+  function local(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return[]}}
+  function keep(a){try{localStorage.setItem(KEY,JSON.stringify(a))}catch(e){}}
+  function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  function render(){
+    empty.style.display=wishes.length?'none':'block';
+    list.innerHTML=wishes.slice().reverse().map(function(w){return '<div class="wish"><b>'+esc(w.n)+'</b><p>'+esc(w.m)+'</p></div>'}).join('');
+  }
+  function refresh(){
+    if(!API){wishes=local();render();return}
+    fetch(API).then(function(r){return r.json()}).then(function(d){wishes=d.wishes||[];render()}).catch(function(){wishes=local();render()});
+  }
+  var ideas=['Congratulations! May Allah bless your marriage and fill your life with love and mercy. 💚','ألف مبروك! بارك الله لكما وبارك عليكما وجمع بينكما في خير.','Wishing you a lifetime of love, laughter and happiness together!','مبروك يا عرسان، ربنا يتمم فرحتكم على خير ويجعل بيتكم عامر بالسعادة.'];
+  document.getElementById('wand').addEventListener('click',function(){
+    document.getElementById('gMsg').value=ideas[Math.floor(Math.random()*ideas.length)];
+  });
+  sendBtn.addEventListener('click',function(){
+    var n=document.getElementById('gName'),m=document.getElementById('gMsg');
+    var w={n:n.value.trim(),m:m.value.trim()};
+    if(!w.n){n.focus();return}
+    if(!w.m){m.focus();return}
+    function done(){wishes.push(w);if(!API)keep(wishes);n.value='';m.value='';render();sendBtn.disabled=false;sendBtn.textContent='SEND WISHES'}
+    if(!API){done();return}
+    sendBtn.disabled=true;sendBtn.textContent='SENDING...';
+    fetch(API,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(w)}).then(done).catch(function(){sendBtn.disabled=false;sendBtn.textContent='TRY AGAIN'});
+  });
+  refresh();
+})();
+</script>
+</body>
+</html>
